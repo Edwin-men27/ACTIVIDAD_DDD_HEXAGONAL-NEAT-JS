@@ -1,0 +1,656 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: "Collection Users / Cea: Aplicacion"
+meta:
+  id: wrk_48b40958a7934950a0e6a16fa5ea3806
+  created: 1765060099450
+  modified: 1765074231935
+  description: ""
+collection:
+  - url: http://localhost:3000/api/users
+    name: Crear Usuario
+    meta:
+      id: req_57e0188a71aa48738ed930c44747a1d6
+      created: 1765061413715
+      modified: 1765071570590
+      isPrivate: false
+      description: ""
+      sortKey: -1765064093595
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "userName": "emendoza",
+          "email": "emendoza@gmail.com",
+          "password": "Contrasena123!",
+          "role": "Admin"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/login
+    name: Iniciar Sesion
+    meta:
+      id: req_a5968267854b41af96d00fee0494ba9f
+      created: 1765063339528
+      modified: 1765071636807
+      isPrivate: false
+      description: ""
+      sortKey: -1765063810757.375
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "emendoza@gmail.com",
+          "password": "Contrasena123!"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2MzkyMCwiZXhwIjoxNzY1MTUwMzIwLCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.ut8FFMGRo2DoShKFlUvHEbh0rqQH2ZqbEQr4HmwGAO4
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/logout
+    name: Cerrar Sesion
+    meta:
+      id: req_4a037156a46445c9bd0bfd7c9ca527df
+      created: 1765064112251
+      modified: 1765064310420
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716511.5
+    method: POST
+    body:
+      mimeType: ""
+      text: ""
+    headers:
+      - name: accept
+        value: "*/*"
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NDI5NSwiZXhwIjoxNzY1MTUwNjk1LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.q083KkvMCkNOKBhXv-ayMyl4xNBg-6ZWaaIYyo3UKVE
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users
+    name: Listar Usuarios
+    meta:
+      id: req_7847765851354c07984fa6e8c14d45a1
+      created: 1765066046420
+      modified: 1765072232600
+      isPrivate: false
+      description: ""
+      sortKey: -1765064093582.5
+    method: GET
+    parameters:
+      - name: searchTerm
+        value: ""
+        disabled: false
+      - name: isActive
+        value: "true"
+        disabled: false
+      - name: role
+        value: User
+        disabled: false
+      - name: pageSize
+        value: "10"
+        disabled: false
+      - name: page
+        value: "1"
+        disabled: false
+    headers:
+      - name: accept
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/4ee87bca-d139-4d6e-8be7-f0f1e0ea7609
+    name: Obtener Usuario Por ID
+    meta:
+      id: req_a30b4c991a784102ba803f002d48fac8
+      created: 1765066309290
+      modified: 1765071753301
+      isPrivate: false
+      description: ""
+      sortKey: -1765064093570
+    method: GET
+    headers:
+      - name: accept
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/4ee87bca-d139-4d6e-8be7-f0f1e0ea7609
+    name: Actualizar Usuario
+    meta:
+      id: req_87b3eee6fd6a4bb3962ee20228501148
+      created: 1765066471721
+      modified: 1765072112721
+      isPrivate: false
+      description: ""
+      sortKey: -1765064046372.0625
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+           "userName": "jdoe",
+           "email": "jdoe@gmail.com",
+           "role": "User"
+        }
+    headers:
+      - name: accept
+        value: application/json
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/4ee87bca-d139-4d6e-8be7-f0f1e0ea7609
+    name: Eliminar Usuario
+    meta:
+      id: req_ceb6b38568174744b6ac277bd81a33a8
+      created: 1765066647709
+      modified: 1765072380870
+      isPrivate: false
+      description: ""
+      sortKey: -1765063928564.7188
+    method: DELETE
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/request-password-reset
+    name: Solicitar Resetear Contraseña
+    meta:
+      id: req_b59679fafaf048b2a74d96854dabe43f
+      created: 1765066763099
+      modified: 1765072253920
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716461.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "jdoe@gmail.com"
+        }
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/reset-password
+    name: Resetear Contraseña
+    meta:
+      id: req_919aadcd1c0540b0a0cea6a908393f43
+      created: 1765066916860
+      modified: 1765072262363
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716436.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "jdoe@gmail.com",
+          "newPassword": "Nueva.Clave1"
+        }
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/users/4ee87bca-d139-4d6e-8be7-f0f1e0ea7609/change-password
+    name: Cambiar Contraseña Por ID
+    meta:
+      id: req_362d832bd276483f8a0ddac317470e55
+      created: 1765067167741
+      modified: 1765072348928
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716424
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+           "currentPassword": "Nuvea.Clave2",
+           "newPassword": "Nuvea.Clave3"
+         }
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcyMDU0LCJleHAiOjE3NjUxNTg0NTQsImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.ZQ-LfTLy3iLFVktbo5dmyikzNNuc5Ss1E0-EWJ-F-t8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones
+    name: Listar Aplicaciones
+    meta:
+      id: req_e0cdfdf9c4f04675989d85ef2d201cde
+      created: 1765067315862
+      modified: 1765072704241
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716311.5
+    method: GET
+    body:
+      mimeType: application/x-www-form-urlencoded
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+      - name: accept
+        value: "*/*"
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7
+    name: Obtener Por ID
+    meta:
+      id: req_f4b405c907ce4c8b9b21370e11090d5c
+      created: 1765067548293
+      modified: 1765072736259
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716211.5
+    method: GET
+    headers:
+      - name: accept
+        value: "*/*"
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDU0YTdkOS0yNDQ0LTRmNTEtYjI0Zi1mZTBhNGU2NzhhZGQiLCJ1c2VyTmFtZSI6IkVkd2luTSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NTA2NjAwOSwiZXhwIjoxNzY1MTUyNDA5LCJhdWQiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQtVXNlcnMiLCJpc3MiOiJBcnF1aXRlY3R1cmFIZXhhZ29uYWxEREQifQ.oWWcCd72j_dNjLG8ZmaP_RVjQHo-OFe-YvGTGXH94JI
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7
+    name: Actualizar Aplicacion
+    meta:
+      id: req_cee042a89340465cb060742e3c34868e
+      created: 1765067660436
+      modified: 1765072800496
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716111.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "proveedor": "SoftDev Labs",
+          "categoria": "Educación",
+          "lenguajePrincipal": "Python",
+          "lenguajeSecundario": "JavaScript",
+          "usaBaseDatos": false,
+          "requiereConexionRed": true,
+          "numBits": 32,
+          "sistemaOperativo": "Ubuntu 22.04",
+          "requisitosHardware": "2GB RAM, 1 CPU",
+          "licencia": "pago",
+          "precio": 10000.0,
+          "descripcion": "Plataforma para cursos interactivos.",
+          "web": "https://cursos.softdev.com",
+          "correo": "contacto@softdev.com",
+          "tamanoInstalador": 65.7
+        }
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7/conexion
+    name: Cambiar Conexion
+    meta:
+      id: req_61f9c3e2f44349b6aea35eda22f3534a
+      created: 1765067843905
+      modified: 1765072847169
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716011.5
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: "{\r   \"requiereConexionRed\": true,\r   \"web\":
+        \"https://app.ejemplo.com\"\r }"
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7/licencia
+    name: Cambiar Licencia
+    meta:
+      id: req_3883c0503ad9485990ad1f0eb83ef391
+      created: 1765068026539
+      modified: 1765072884295
+      isPrivate: false
+      description: ""
+      sortKey: -1765063715911.5
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: "{\r   \"licencia\": \"gratuita\",\r   \"precio\": 0\r }"
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7/versiones
+    name: Crear Actualizacion
+    meta:
+      id: req_02a9ecd82ec94709aba4b3f4f3e09fba
+      created: 1765068234433
+      modified: 1765072945212
+      isPrivate: false
+      description: ""
+      sortKey: -1765063715811.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+           "numeroVersion": "1.1.0",
+           "fechaPublicacion": "2025-12-01",
+           "cambios": "Se agrego un nuevo campo visual, y se corrigieron errores en la base de datos"
+         }
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7/estado
+    name: Cambiar Estado
+    meta:
+      id: req_df61d21346d84fa994520e7e4f95cc88
+      created: 1765068355606
+      modified: 1765072976600
+      isPrivate: false
+      description: ""
+      sortKey: -1765063715711.5
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: "{\r   \"estado\": \"INACTIVA\"\r }"
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones/d2b350f2-fba1-43c9-a9fd-e5417bb222d7/compatibilidad
+    name: Comprobar Compatibilidad
+    meta:
+      id: req_8c0a3dcdf31b4f8e82ac976ea2a74cf9
+      created: 1765068422903
+      modified: 1765073047144
+      isPrivate: false
+      description: ""
+      sortKey: -1765063715611.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: "{\r   \"sistemaOperativoUsuario\": \"Windows
+        11\",\r   \"arquitecturaBitsUsuario\":
+        64,\r   \"requisitosHardwareUsuario\": \"8GB RAM, 2 CPU\"\r }"
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/aplicaciones
+    name: Crear Aplicacion
+    meta:
+      id: req_8570e5fafd104d89b07c6c24d600bba2
+      created: 1765072484214
+      modified: 1765072660758
+      isPrivate: false
+      description: ""
+      sortKey: -1765063716367.75
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+           "nombre": "Monitor de Peliculas",
+           "proveedor": "TechFilm S.A.",
+           "categoria": "Gestión",
+           "lenguajePrincipal": "Java",
+           "lenguajeSecundario": "SQL",
+           "usaBaseDatos": true,
+           "requiereConexionRed": false,
+           "numBits": 32,
+           "sistemaOperativo": "Linux",
+           "requisitosHardware": "4GB RAM, 1 CPU",
+           "licencia": "gratuita",
+           "precio": 0,
+           "descripcion": "Sistema para la gestion de las peliculas",
+           "web": "https://filmtest.com",
+           "correo": "film@gmail.com",
+        	  "tamanoInstalador": 87.3
+        }
+    headers:
+      - name: accept
+        value: "*/*"
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNjVlYzE3YS0zMDA4LTRmNGMtOWQyZS05YjAzNDIwMDA5MzkiLCJ1c2VyTmFtZSI6ImVtZW5kb3phIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzY1MDcxNjM5LCJleHAiOjE3NjUxNTgwMzksImF1ZCI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERC1Vc2VycyIsImlzcyI6IkFycXVpdGVjdHVyYUhleGFnb25hbERERCJ9.yz-RboejmkLP6KU-a7dpjZV1vVEVKmeCiwuWzxZpsdU
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_adc9905233aeb844d26d4d8f339d82c45c08db4b
+    created: 1765060099482
+    modified: 1765060099482
+environments:
+  name: Base Environment
+  meta:
+    id: env_adc9905233aeb844d26d4d8f339d82c45c08db4b
+    created: 1765060099468
+    modified: 1765060099468
+    isPrivate: false
